@@ -93,6 +93,13 @@
         background-color: $dark-orange;
         border-top: 2px solid #f5f5f57f;
 
+        @media screen and (max-width: $phone) {
+
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+
         .button_close_filters{
 
             @include button($red, $red, 2vw , 2vw, 1vw, 2s);
