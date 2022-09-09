@@ -64,7 +64,7 @@ export default function Nav({setSort}){
 
                 <div>
 
-                    <label>Filter By:</label>
+                    <label>Filter:</label>
 
                     <div className={style.filters_select}>
 
@@ -84,7 +84,7 @@ export default function Nav({setSort}){
                 </div>
 
                 <div>
-                    <label>Sort By:</label>
+                    <label>Sort:</label>
                     <select onChange={ (e) => handleSort(e)}>
                         <option value='Default'>Default</option>
                         <option value='Attack_A'>Attack A</option>

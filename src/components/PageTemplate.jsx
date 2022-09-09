@@ -4,6 +4,12 @@ import { NavLink } from 'react-router-dom'
 
 export default function PageTemplate({img, content}) {
 
+    useEffect(()=>{
+
+        window.scrollTo(0, 0)
+
+    }, [])
+
     return(
 
         <div className={style.container}>

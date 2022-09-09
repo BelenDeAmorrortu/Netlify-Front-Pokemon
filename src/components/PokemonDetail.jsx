@@ -14,7 +14,7 @@ export default function PokemonDetail({id}) {
 
         dispatch(getPokemonById(id))
 
-    }, [])
+    }, [] )
 
     return (
 
