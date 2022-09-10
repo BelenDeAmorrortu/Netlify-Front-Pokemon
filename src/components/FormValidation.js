@@ -1,19 +1,23 @@
 
-const myRegex = /[\W\d]/g
+const nameRegex = /[\W\d]/g
 
-export function validate(input){
+const urlRegex = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
 
-    let errors = {}
+export function validate(input, value){
 
-    if(!input.name){
+    let error
 
-        errors.name = 'Your Pokemon needs to have a Name'
+    if(input === 'name'){
+
+        if(value === '') error  = 'Your Pokemon needs to have a Name'
+        else if(nameRegex.test(value)) error= "Numbers, special characters and spaces aren't allowed"   
+
     }
 
-    else if(myRegex.test(input.name)){
+    else{
 
-        errors.name = "Numbers, special characters and spaces aren't allowed"
+        if(!urlRegex.test(value) && value != "") error = "Url is not valid"
     }
-
-    return errors
+    
+    return error
 }

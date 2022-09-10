@@ -8,7 +8,6 @@
     width: 100vw;
     height: 10vh;
     background-color: $dark-orange;
-    // background-image: linear-gradient(3deg, $dark-orange, rgb(218, 181, 164));
     justify-content: space-between;
     align-items: center;
     box-shadow: -6px 4px 10px rgba(0, 0, 0, 0.438);
@@ -129,6 +128,11 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            
+            @media screen and (max-width: $phone) {
+            
+                margin-left: 15vw;
+            }
         }
 
         .filters_select{
@@ -141,6 +145,11 @@
             
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            @media screen and (max-width: $phone) {
+
+                margin-right: 10vw;
             }
         }
 

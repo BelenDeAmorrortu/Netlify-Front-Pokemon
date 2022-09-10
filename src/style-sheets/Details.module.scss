@@ -24,8 +24,6 @@
 
                 h1{
                     text-transform: uppercase;
-                    // font-family: $title;
-                    // font-weight: 400;
                     font-size: 3.5vw;
                     color: $red;
                     text-shadow: 0px 1px 1px #f5f5f5;
@@ -46,8 +44,6 @@
                     width: 30vw;
                     min-height: 7vh;
                     height: fit-content;
-                    // background-color: #f5f5f5;
-                    // border-radius: 10px;
                     margin: 1vh 3vw;
 
                     @media screen and (max-width: $phone) {
@@ -137,7 +133,6 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            // font-weight: bold;
                             border-radius: 10px;
                             color: #f5f5f5;
                             animation: showProgress 1.5s linear;
@@ -145,6 +140,7 @@
                             @media screen and (max-width: $phone) {
                 
                                 font-size: 3.5vw;
+                                animation-delay: 1s;
                             }
 
                         }

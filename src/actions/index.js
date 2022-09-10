@@ -6,8 +6,6 @@ export function getPokemons(){
 
         let pokemons = await axios.get('https://pokemon-app-bda.herokuapp.com/pokemons')
 
-        console.log(pokemons.data)
-
         return dispatch({ type: 'GET_POKEMONS', payload: pokemons.data })
     }
 }

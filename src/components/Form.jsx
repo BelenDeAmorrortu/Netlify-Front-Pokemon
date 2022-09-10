@@ -30,7 +30,8 @@ export default function Form() {
         types: []
     })
 
-    const [errors, setErrors] = useState({name: 'Your Pokemon needs to have a name'})
+    const [errors, setErrors] = useState({})
+
 
     function handleChange(e){
 
@@ -39,7 +40,7 @@ export default function Form() {
             [e.target.name]: e.target.value
         })
 
-        setErrors(validate(input))
+        if(e.target.name === 'name' || e.target.name === 'img') setErrors({...errors, [e.target.name]: validate(e.target.name, e.target.value)})
     }
 
     function handleSelect(e){
@@ -75,7 +76,7 @@ export default function Form() {
         alert('Pokemon Created')
         setInput({    
             name: '',
-            experience: '',
+            life: '',
             attack: '',
             defence: '',
             speed: '',
@@ -88,20 +89,19 @@ export default function Form() {
     }
 
     return (
-        
         < >
             <form className={style.form}>
 
                 <div>
                     <label>Name:* <span>{errors.name && errors.name}</span></label>
-                    <input value={input.name} placeholder='Name' name='name' type='text' onChange={handleChange}/>
+                    <input value={input.name} placeholder='Name' name='name' type='text' onChange={e => handleChange(e)}/>
 
                     
-                    <label>Experience:</label>
-                    <input value={input.experience} placeholder='Experience' name='experience' type='text' onChange={handleChange}/>
+                    <label>Life Experience:</label>
+                    <input value={input.life} placeholder='Life Experience' name='life' type='text' onChange={e => handleChange(e)}/>
                     
-                    <label>Image:</label>
-                    <input placeholder='Image Url' name='img' type='url' onChange={handleChange}/>
+                    <label>Image: <span>{errors.img && errors.img}</span></label>
+                    <input placeholder='Image Url' name='img' type='url' onChange={e => handleChange(e)}/>
 
                     <label>Types:</label>
                     <select onChange={(e)=> handleSelect(e)}>
@@ -116,16 +116,16 @@ export default function Form() {
 
                 <div>
 
-                    <label>Attack: <span>{input.attack}</span></label>
-                    <input value={input.attack} type="range" name="attack" min="0" max="200" onChange={handleChange} className={style.range} />
-                    <label>Defence: <span>{input.defence}</span></label>
-                    <input value={input.defence} type="range" name="defence" min="0" max="200" onChange={handleChange} className={style.range}/>
-                    <label>Speed: <span>{input.speed}</span></label>
-                    <input value={input.speed} type="range" name="speed" min="0" max="200" onChange={handleChange} className={style.range}/>
-                    <label>Height: <span>{input.height} m</span></label>
-                    <input value={input.height} placeholder='Height' name='height' type='range' min="0" max="3" step='0.1' onChange={handleChange} className={style.range} />
-                    <label>Weight: <span>{input.weight} kg</span></label>
-                    <input value={input.weight} placeholder='Weight' name='weight' type='range' min="0" max="1000" step='0.5' onChange={handleChange} className={style.range} />
+                    <label>{`Attack: ${input.attack}`}</label>
+                    <input value={input.attack} type="range" name="attack" min="0" max="200" onChange={e => handleChange(e)} className={style.range} />
+                    <label>{`Defence: ${input.defence}`}</label>
+                    <input value={input.defence} type="range" name="defence" min="0" max="200" onChange={e => handleChange(e)} className={style.range}/>
+                    <label>{`Speed: ${input.speed}`}</label>
+                    <input value={input.speed} type="range" name="speed" min="0" max="200" onChange={e => handleChange(e)} className={style.range}/>
+                    <label>{`Height: ${input.height} m`}</label>
+                    <input value={input.height} placeholder='Height' name='height' type='range' min="0" max="3" step='0.1' onChange={e => handleChange(e)} className={style.range} />
+                    <label>{`Weight: ${input.weight} kg`}</label>
+                    <input value={input.weight} placeholder='Weight' name='weight' type='range' min="0" max="1000" step='0.5' onChange={e => handleChange(e)} className={style.range} />
 
                 </div>
 
