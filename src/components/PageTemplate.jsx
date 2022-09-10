@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from '../style-sheets/PageTemplate.module.scss'
 import { NavLink } from 'react-router-dom'
 
