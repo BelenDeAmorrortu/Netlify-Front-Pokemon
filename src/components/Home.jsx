@@ -1,15 +1,12 @@
-import React, {useEffect, useState} from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {useState} from 'react'
 import Cards from './Cards.jsx'
 import Pagination from './Pagination.jsx'
 import style from '../style-sheets/Home.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { getPokemons } from '../actions'
+import { useSelector } from 'react-redux'
 import Nav from './Nav.jsx'
 
 export default function Home(){
 
-    // const dispatch = useDispatch()
     const allPokemons = useSelector(state => state.pokemons)
 
     const [currentPage, setCurrentPage] = useState(1)

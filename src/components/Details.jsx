@@ -3,6 +3,8 @@ import style from '../style-sheets/Details.module.scss'
 
 export default function Details({pokemon}) {
 
+    console.log(pokemon.types)
+
     return (
    
         <div className={style.detail}>
@@ -20,21 +22,26 @@ export default function Details({pokemon}) {
                 <div>
                     <div className={style.color}>
                         <h3>Experince</h3>
-                        <p>{pokemon.experience}</p>
+                        <p>{pokemon.experience ? pokemon.experience : '-'}</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div className={style.color}>
+                        <h3>Type</h3>
+                        { pokemon.types && pokemon.types.length !== 0 ? (pokemon.source === 'Api' ? pokemon.types.map( t => <span key={t}>{t}</span>) : pokemon.types.map( t => <span key={t.name}>{t.name}</span>)): <p>unknown</p>}
                     </div>
                 </div>
 
                 <div>
                     <div className={`${style.size} ${style.color}`} >
                         <h4>Height</h4>
-                        <p>{pokemon.height} m</p>
+                        <p>{pokemon.height ? pokemon.height : '-'} m</p>
                     </div>
-                {/* </div>
 
-                <div> */}
                     <div className={`${style.size} ${style.color}`}>
                         <h4>Weight</h4>
-                        <p>{pokemon.weight} kg</p>
+                        <p>{pokemon.weight ? pokemon.weight : '-'} kg</p>
                     </div>
                 </div>
 
@@ -66,3 +73,4 @@ export default function Details({pokemon}) {
         
     )
 }
+

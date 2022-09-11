@@ -6,8 +6,7 @@ import { NavLink } from 'react-router-dom'
 export default function LandingPage() {
 
     return (
-
-
+        
         <div className={style.landing_container}>
 
             <img src={Logo} />

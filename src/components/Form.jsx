@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { createPokemon, getTypes } from '../actions/index'
+import { createPokemon, getPokemons, getTypes } from '../actions/index'
 import { validate } from './FormValidation'
 import style from '../style-sheets/Form.module.scss'
 
@@ -72,8 +72,12 @@ export default function Form() {
         }
 
         if(input.img === '') delete input.img
+
         dispatch(createPokemon(input))
+        dispatch(getPokemons())
+
         alert('Pokemon Created')
+
         setInput({    
             name: '',
             life: '',
@@ -131,7 +135,7 @@ export default function Form() {
 
             </form>
 
-            <button className={style.submit_button} onClick={handleSubmit}>Create Pokemon</button>
+            <button className={style.submit_button} onClick={e => handleSubmit(e)}>Create Pokemon</button>
         
         </>
     )

@@ -129,10 +129,6 @@
             flex-direction: row;
             align-items: center;
             
-            @media screen and (max-width: $phone) {
-            
-                margin-left: 15vw;
-            }
         }
 
         .filters_select{
