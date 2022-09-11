@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.76e67e22.chunk.css",
-    "main.js": "/static/js/main.2960fe09.chunk.js",
-    "main.js.map": "/static/js/main.2960fe09.chunk.js.map",
+    "main.css": "/static/css/main.c1e4ae21.chunk.css",
+    "main.js": "/static/js/main.50d4a0b6.chunk.js",
+    "main.js.map": "/static/js/main.50d4a0b6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0a9e9d62.js",
     "runtime-main.js.map": "/static/js/runtime-main.0a9e9d62.js.map",
     "static/js/2.3233bac6.chunk.js": "/static/js/2.3233bac6.chunk.js",
     "static/js/2.3233bac6.chunk.js.map": "/static/js/2.3233bac6.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.76e67e22.chunk.css.map": "/static/css/main.76e67e22.chunk.css.map",
+    "static/css/main.c1e4ae21.chunk.css.map": "/static/css/main.c1e4ae21.chunk.css.map",
     "static/js/2.3233bac6.chunk.js.LICENSE.txt": "/static/js/2.3233bac6.chunk.js.LICENSE.txt",
     "static/media/LandingPage.module.scss": "/static/media/IMG_8527.1d375970.GIF",
     "static/media/LogoBN.6c5a4f29.png": "/static/media/LogoBN.6c5a4f29.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.0a9e9d62.js",
     "static/js/2.3233bac6.chunk.js",
-    "static/css/main.76e67e22.chunk.css",
-    "static/js/main.2960fe09.chunk.js"
+    "static/css/main.c1e4ae21.chunk.css",
+    "static/js/main.50d4a0b6.chunk.js"
   ]
 }
