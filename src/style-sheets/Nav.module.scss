@@ -143,10 +143,6 @@
                 align-items: flex-start;
             }
 
-            @media screen and (max-width: $phone) {
-
-                margin-right: 10vw;
-            }
         }
 
         select{
@@ -165,6 +161,10 @@
 
                 height: fit-content;
                 
+            }
+            @media screen and (max-width: $phone) {
+
+                margin-right: 10vw;
             }
         }
 
