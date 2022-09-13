@@ -18,7 +18,7 @@ export default function SearchBar() {
 
         e.preventDefault()
         setName('')
-        dispatch(getPokemonByName(name))
+        dispatch(getPokemonByName(name.toLowerCase()))
     }
 
     return(

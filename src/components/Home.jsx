@@ -20,14 +20,12 @@ export default function Home(){
     function pagination(pageNumber){
 
         setCurrentPage(pageNumber)
+        
+        let spans = document.querySelectorAll('.page')
+
+        spans.forEach(s => s.id === `span${pageNumber}` ? s.classList.add(`${paginationStyle.currentPage}`) : s.classList.remove(`${paginationStyle.currentPage}`))
+        
     }
-
-    // useEffect(()=>{
-
-    //     dispatch(getPokemons())
-    //     console.log('Hice llamado a Pokemons')
-
-    // }, [])
 
     return (
 

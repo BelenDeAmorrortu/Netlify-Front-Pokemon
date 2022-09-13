@@ -30,7 +30,7 @@ export default function Form() {
         types: []
     })
 
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({name: 'Your Pokemon needs to have a Name'})
 
 
     function handleChange(e){
@@ -63,9 +63,7 @@ export default function Form() {
 
         e.preventDefault()
 
-        setErrors(validate(input))
-
-        if(errors.name){
+        if(errors.name || errors.img){
 
             alert("Your Pokemon's details have an error, please modify the form")
             return
@@ -77,10 +75,9 @@ export default function Form() {
         dispatch(getPokemons())
 
         alert('Pokemon Created')
-
         setInput({    
             name: '',
-            life: '',
+            experience: '',
             attack: '',
             defence: '',
             speed: '',
@@ -101,8 +98,8 @@ export default function Form() {
                     <input value={input.name} placeholder='Name' name='name' type='text' onChange={e => handleChange(e)}/>
 
                     
-                    <label>Life Experience:</label>
-                    <input value={input.life} placeholder='Life Experience' name='life' type='text' onChange={e => handleChange(e)}/>
+                    <label>Experience:</label>
+                    <input value={input.experience} placeholder='Experience' name='experience' type='text' onChange={e => handleChange(e)}/>
                     
                     <label>Image: <span>{errors.img && errors.img}</span></label>
                     <input placeholder='Image Url' name='img' type='url' onChange={e => handleChange(e)}/>
@@ -135,7 +132,7 @@ export default function Form() {
 
             </form>
 
-            <button className={style.submit_button} onClick={e => handleSubmit(e)}>Create Pokemon</button>
+            <button className={style.submit_button} onClick={ e => handleSubmit(e)}>Create Pokemon</button>
         
         </>
     )

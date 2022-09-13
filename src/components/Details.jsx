@@ -3,8 +3,6 @@ import style from '../style-sheets/Details.module.scss'
 
 export default function Details({pokemon}) {
 
-    console.log(pokemon.types)
-
     return (
    
         <div className={style.detail}>

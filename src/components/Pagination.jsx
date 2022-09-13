@@ -16,7 +16,7 @@ export default function Pagination({pagination, pokemonsPerPage, amountOfPokemon
 
             <div className={style.pagination}>
 
-                {amountOfPages && amountOfPages.map(num => <span onClick={()=> pagination(num)} key={num} >{num}</span> )}
+                {amountOfPages && amountOfPages.map(num => <span onClick={()=> pagination(num)} key={num} id={`span${num}`} className='page'>{num}</span> )}
 
             </div>
         
