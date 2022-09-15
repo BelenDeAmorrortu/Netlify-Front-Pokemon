@@ -4,6 +4,7 @@ import Pagination from './Pagination.jsx'
 import style from '../style-sheets/Home.module.scss'
 import { useSelector } from 'react-redux'
 import Nav from './Nav.jsx'
+import paginationStyle from '../style-sheets/Pagination.module.scss'
 
 export default function Home(){
 
@@ -16,6 +17,7 @@ export default function Home(){
     const currentPokemons = allPokemons.slice(indexOfFirstPokemonOfPage, indexOfLastPokemonOfPage)
 
     const [sort, setSort] = useState()
+    const [loadingMsg, setLoadingMsg] = useState('')
 
     function pagination(pageNumber){
 
@@ -31,10 +33,10 @@ export default function Home(){
 
         <div className={style.home_container}>
 
-            <Nav setSort={setSort} />
+            <Nav setSort={setSort} setLoadingMsg={setLoadingMsg}/>
 
-            <Cards pokemons={currentPokemons} sorted={sort} />
-            <Pagination pagination={pagination} pokemonsPerPage={pokemonsPerPage} amountOfPokemons={allPokemons.length} />
+            <Cards pokemons={currentPokemons} sorted={sort} msg={loadingMsg}/>
+            <Pagination pagination={pagination} pokemonsPerPage={pokemonsPerPage} amountOfPokemons={allPokemons.length} currentPage={currentPage} />
 
         </div>
     )

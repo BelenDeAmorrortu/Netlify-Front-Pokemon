@@ -99,7 +99,7 @@ export default function Form() {
 
                     
                     <label>Experience:</label>
-                    <input value={input.experience} placeholder='Experience' name='experience' type='text' onChange={e => handleChange(e)}/>
+                    <input value={input.experience} placeholder='Experience' name='experience' type='number' onChange={e => handleChange(e)}/>
                     
                     <label>Image: <span>{errors.img && errors.img}</span></label>
                     <input placeholder='Image Url' name='img' type='url' onChange={e => handleChange(e)}/>
