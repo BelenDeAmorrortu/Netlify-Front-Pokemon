@@ -12,7 +12,7 @@ export default function LandingPage() {
             <img src={Logo} />
             <NavLink to='/pokemons'>
 
-                <button>Go to Home Page</button>
+                <button>START</button>
             
             </NavLink>
         

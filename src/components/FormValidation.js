@@ -1,7 +1,7 @@
 
 const nameRegex = /[\W\dA-Z]/g
 
-const urlRegex = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
+const urlRegex = /http(|s):.*\.(jpg|png|jpeg|gif)/g
 
 export function validate(input, value){
 
