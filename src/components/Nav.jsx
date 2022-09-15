@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getTypes, filterPokemonsByType, filterPokemonsBySource, sortPokemons, getPokemons } from '../actions'
 
-export default function Nav({setSort, setLoadingMsg}){
+export default function Nav({setSort, setLoadingMsg, pagination }){
 
     const dispatch = useDispatch()
     const allTypes = useSelector(state => state.types)
@@ -22,12 +22,14 @@ export default function Nav({setSort, setLoadingMsg}){
     function handleFilterTypes(e){
 
         dispatch(filterPokemonsByType(e.target.value))
+        pagination(1)
         setLoadingMsg("That type doesn't have pokemons yet")
     }
 
     function handleFilterSource(e){
 
         dispatch(filterPokemonsBySource(e.target.value))
+        pagination(1)
         setLoadingMsg("You haven't created a pokemon yet")
 
     }

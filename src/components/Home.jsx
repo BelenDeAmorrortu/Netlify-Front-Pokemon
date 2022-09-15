@@ -33,7 +33,7 @@ export default function Home(){
 
         <div className={style.home_container}>
 
-            <Nav setSort={setSort} setLoadingMsg={setLoadingMsg}/>
+            <Nav setSort={setSort} setLoadingMsg={setLoadingMsg} pagination={pagination} />
 
             <Cards pokemons={currentPokemons} sorted={sort} msg={loadingMsg}/>
             <Pagination pagination={pagination} pokemonsPerPage={pokemonsPerPage} amountOfPokemons={allPokemons.length} currentPage={currentPage} />
