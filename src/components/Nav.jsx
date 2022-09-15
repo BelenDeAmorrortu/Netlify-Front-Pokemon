@@ -22,12 +22,14 @@ export default function Nav({setSort, setLoadingMsg}){
     function handleFilterTypes(e){
 
         dispatch(filterPokemonsByType(e.target.value))
-        setLoadingMsg('That type does not have pokemons yet')
+        setLoadingMsg("That type doesn't have pokemons yet")
     }
 
     function handleFilterSource(e){
 
         dispatch(filterPokemonsBySource(e.target.value))
+        setLoadingMsg("You haven't created a pokemon yet")
+
     }
 
     function handleSort(e){
