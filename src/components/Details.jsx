@@ -1,7 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { deleteDbPokemon, getPokemons } from '../actions'
 import style from '../style-sheets/Details.module.scss'
 
 export default function Details({pokemon}) {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    function handlePokemonDelete(e){
+
+        e.preventDefault()
+        dispatch(deleteDbPokemon(pokemon.id))
+        alert('Pokemon deleted successfully')
+        dispatch(getPokemons())
+        history.push('/pokemons')
+    }
 
     return (
    
@@ -49,20 +64,24 @@ export default function Details({pokemon}) {
 
                 <div>
                     <h3>Speed</h3>
-                    <div className={style.progress_bar}><span style={{'--bar': `${pokemon.speed / 2}%`}}>{pokemon.speed}</span></div>
+                    <div className={style.progress_bar}><span style={{'--bar': (pokemon.speed ? `${pokemon.speed / 2}%` : '0%')}}>{pokemon.speed}</span></div>
                 
                 </div>
 
                 <div>
                     <h3>Attack</h3>
-                    <div className={style.progress_bar}><span style={{'--bar': `${pokemon.attack / 2}%`}}>{pokemon.attack}</span></div>
+                    <div className={style.progress_bar}><span style={{'--bar': (pokemon.attack ? `${pokemon.attack / 2}%` : '0%')}}>{pokemon.attack}</span></div>
                 
                 </div>
 
                 <div>
                     <h3>Defence</h3>
-                    <div className={style.progress_bar}><span style={{'--bar': `${pokemon.defence / 2}%`}}>{pokemon.defence}</span></div>
+                    <div className={style.progress_bar}><span style={{'--bar': (pokemon.defence ? `${pokemon.defence / 2}%` : '0%')}}>{pokemon.defence}</span></div>
                 
+                </div>
+
+                <div style={{display: pokemon.source === 'Database' ? 'block' : 'none'}}>
+                    <button onClick={e => handlePokemonDelete(e)}>Delete</button>
                 </div>
 
             </div>
@@ -71,4 +90,3 @@ export default function Details({pokemon}) {
         
     )
 }
-

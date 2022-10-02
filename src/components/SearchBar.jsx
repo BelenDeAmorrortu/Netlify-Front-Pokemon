@@ -17,9 +17,8 @@ export default function SearchBar() {
     function handleSearch(e){
 
         e.preventDefault()
-        dispatch(getPokemonByName(name.toLowerCase()))
         setName('')
-
+        dispatch(getPokemonByName(name.toLowerCase()))
     }
 
     return(
@@ -27,8 +26,9 @@ export default function SearchBar() {
         <div className={style.search_bar}>
 
             <input type='text' placeholder='Name...' value={name} onChange={e => handleChange(e)} />
-            <div onClick={e => handleSearch(e)}><img src={searchIcon}/></div>
+            <button className={style.button} onClick={e => handleSearch(e)}><img src={searchIcon}/></button>
         
         </div>
     )
 }
+

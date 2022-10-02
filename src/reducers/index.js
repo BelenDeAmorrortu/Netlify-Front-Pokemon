@@ -103,6 +103,12 @@ function rootReducer(state = initialState, action){
                 pokemons: action.payload
             }
 
+        case 'DELETE_DB_POKEMON':
+
+            return{
+                ...state
+            }
+
         default:
             return state;
     }

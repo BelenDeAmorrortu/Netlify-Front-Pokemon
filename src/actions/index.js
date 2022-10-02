@@ -4,9 +4,9 @@ export function getPokemons(){
 
     return async (dispatch)=>{
 
-        let pokemons = await axios.get('https://pokemon-app-bda.herokuapp.com/pokemons')
+        let { data } = await axios.get('https://pokemon-app-bda.herokuapp.com/pokemons')
 
-        return dispatch({ type: 'GET_POKEMONS', payload: pokemons.data })
+        return dispatch({ type: 'GET_POKEMONS', payload: data })
     }
 }
 
@@ -14,7 +14,7 @@ export function createPokemon(payload){
 
     return async(dispatch)=>{
 
-        let post = await axios.post('https://pokemon-app-bda.herokuapp.com/pokemons', payload)
+        await axios.post('https://pokemon-app-bda.herokuapp.com/pokemons', payload)
 
         return dispatch({type: 'CREATE_POKEMON'})
     }
@@ -24,9 +24,9 @@ export function getTypes(){
 
     return async(dispatch)=>{
 
-        let types = await axios.get('https://pokemon-app-bda.herokuapp.com/types')
+        let { data } = await axios.get('https://pokemon-app-bda.herokuapp.com/types')
 
-        return dispatch({type: 'GET_TYPES', payload: types.data})
+        return dispatch({type: 'GET_TYPES', payload: data})
     }
 }
 
@@ -34,9 +34,9 @@ export function getPokemonById(id){
 
     return async(dispatch)=>{
 
-        let pokemon = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons/${id}`)
+        let { data } = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons/${id}`)
 
-        return dispatch({type: 'GET_POKEMON_BY_ID', payload: pokemon.data})
+        return dispatch({type: 'GET_POKEMON_BY_ID', payload: data})
     }
 }
 
@@ -61,9 +61,9 @@ export function getPokemonByName(name){
 
         try{
 
-            let pokemon = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons?name=${name}`)
+            let { data } = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons?name=${name}`)
 
-            return dispatch({type: 'GET_POKEMON_BY_NAME', payload: pokemon.data})
+            return dispatch({type: 'GET_POKEMON_BY_NAME', payload: data})
 
         }
 
@@ -72,8 +72,26 @@ export function getPokemonByName(name){
             alert(e.response.data)
         }
 
-
     }
-
     
+}
+
+export function deleteDbPokemon(id){
+
+    return async(dispatch)=>{
+
+        try{
+
+            await axios.delete(`https://pokemon-app-bda.herokuapp.com/pokemons/${id}`)
+
+            return dispatch({type: 'DELETE_DB_POKEMON'})
+
+        }
+
+        catch(e){
+
+            alert(e.response.data)
+        }
+    }
+ 
 }
