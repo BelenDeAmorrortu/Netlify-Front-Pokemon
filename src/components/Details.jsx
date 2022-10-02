@@ -80,7 +80,7 @@ export default function Details({pokemon}) {
                 
                 </div>
 
-                <div style={{display: pokemon.source === "Database" ? 'block' : 'none'}}>
+                <div style={{display: pokemon.source === 'Database' ? 'block' : 'none'}}>
                     <button onClick={e => handlePokemonDelete(e)}>Delete</button>
                 </div>
 
