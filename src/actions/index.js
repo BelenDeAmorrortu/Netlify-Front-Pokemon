@@ -4,7 +4,7 @@ export function getPokemons(){
 
     return async (dispatch)=>{
 
-        let { data } = await axios.get('https://pokemon-app-bda.herokuapp.com/pokemons')
+        let { data } = await axios.get('https://pokemon-bda.onrender.com/pokemons')
 
         return dispatch({ type: 'GET_POKEMONS', payload: data })
     }
@@ -14,7 +14,7 @@ export function createPokemon(payload){
 
     return async(dispatch)=>{
 
-        await axios.post('https://pokemon-app-bda.herokuapp.com/pokemons', payload)
+        await axios.post('https://pokemon-bda.onrender.com/pokemons', payload)
 
         return dispatch({type: 'CREATE_POKEMON'})
     }
@@ -24,7 +24,7 @@ export function getTypes(){
 
     return async(dispatch)=>{
 
-        let { data } = await axios.get('https://pokemon-app-bda.herokuapp.com/types')
+        let { data } = await axios.get('https://pokemon-bda.onrender.com/types')
 
         return dispatch({type: 'GET_TYPES', payload: data})
     }
@@ -34,7 +34,7 @@ export function getPokemonById(id){
 
     return async(dispatch)=>{
 
-        let { data } = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons/${id}`)
+        let { data } = await axios.get(`https://pokemon-bda.onrender.com/pokemons/${id}`)
 
         return dispatch({type: 'GET_POKEMON_BY_ID', payload: data})
     }
@@ -61,7 +61,7 @@ export function getPokemonByName(name){
 
         try{
 
-            let { data } = await axios.get(`https://pokemon-app-bda.herokuapp.com/pokemons?name=${name}`)
+            let { data } = await axios.get(`https://pokemon-bda.onrender.com/pokemons?name=${name}`)
 
             return dispatch({type: 'GET_POKEMON_BY_NAME', payload: data})
 
@@ -82,7 +82,7 @@ export function deleteDbPokemon(id){
 
         try{
 
-            await axios.delete(`https://pokemon-app-bda.herokuapp.com/pokemons/${id}`)
+            await axios.delete(`https://pokemon-bda.onrender.com/pokemons/${id}`)
 
             return dispatch({type: 'DELETE_DB_POKEMON'})
 
